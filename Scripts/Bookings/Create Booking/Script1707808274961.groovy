@@ -24,7 +24,7 @@ def createBooking = WS.sendRequest(findTestObject(
 	'Object Repository/bookings/POST Create Booking',
 	[
 		"firstname" : "Jalu",
-		"lastname" : "Potter",
+		"lastname" : "Goyang",
 		"price" : 394,
 		"isAlreadyPaid" : true,
 		"checkin" : "2024-13-02",
