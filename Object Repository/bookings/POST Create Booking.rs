@@ -11,7 +11,7 @@
    <followRedirects>false</followRedirects>
    <httpBody></httpBody>
    <httpBodyContent>{
-  &quot;text&quot;: &quot;{\n  \&quot;firstname\&quot; : \&quot;${firstname}\&quot;,\n  \&quot;lastname\&quot; : \&quot;${lastname}\&quot;,\n  \&quot;totalprice\&quot; : 111,\n  \&quot;depositpaid\&quot; : true,\n  \&quot;bookingdates\&quot; : {\n    \&quot;checkin\&quot; : \&quot;2018-01-01\&quot;,\n    \&quot;checkout\&quot; : \&quot;2019-01-01\&quot;\n  },\n  \&quot;additionalneeds\&quot; : \&quot;Breakfast\&quot;\n}&quot;,
+  &quot;text&quot;: &quot;{\n  \&quot;firstname\&quot; : \&quot;${firstname}\&quot;,\n  \&quot;lastname\&quot; : \&quot;${lastname}\&quot;,\n  \&quot;totalprice\&quot; : ${price},\n  \&quot;depositpaid\&quot; : ${isAlreadyPaid},\n  \&quot;bookingdates\&quot; : {\n    \&quot;checkin\&quot; : \&quot;${checkin}\&quot;,\n    \&quot;checkout\&quot; : \&quot;${checkout}\&quot;\n  },\n  \&quot;additionalneeds\&quot; : \&quot;${additionals}\&quot;\n}&quot;,
   &quot;contentType&quot;: &quot;application/json&quot;,
   &quot;charset&quot;: &quot;UTF-8&quot;
 }</httpBodyContent>
@@ -58,6 +58,34 @@
       <id>a5704a16-a15e-4e75-8bc5-129ba2dc758f</id>
       <masked>false</masked>
       <name>lastname</name>
+   </variables>
+   <variables>
+      <defaultValue>0</defaultValue>
+      <description></description>
+      <id>02f07603-8c3d-4009-af45-bf046fc38082</id>
+      <masked>false</masked>
+      <name>price</name>
+   </variables>
+   <variables>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>d333da24-bce3-4916-98fd-9cf3b48665e7</id>
+      <masked>false</masked>
+      <name>checkin</name>
+   </variables>
+   <variables>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>0cf7561a-37a4-4cdc-a249-e1991da7349f</id>
+      <masked>false</masked>
+      <name>checkout</name>
+   </variables>
+   <variables>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>f0be6360-89c1-420b-a5f0-8da106a811a8</id>
+      <masked>false</masked>
+      <name>additionals</name>
    </variables>
    <verificationScript>import static org.assertj.core.api.Assertions.*
 

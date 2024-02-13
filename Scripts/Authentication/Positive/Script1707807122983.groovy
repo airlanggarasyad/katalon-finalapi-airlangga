@@ -17,16 +17,10 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
+GlobalVariable.USERNAME = "jalu"
+
 def response = WS.sendRequest(findTestObject('Object Repository/auth/POST Authenticate'))
-GlobalVariable.TOKEN = WS.getElementPropertyValue(response, 'token')
 
-def partialUpdate = WS.sendRequest(findTestObject(
-	'Object Repository/bookings/PATCH Partial Update',
-	[
-		'id': 9,
-		'firstname': 'Jalu',
-		'lastname': 'Potter'
-	]
-))
+String responseBody = WS.getElementPropertyValue(response, 'token')
 
-println(partialUpdate.getResponseText())
+assert responseBody == null
